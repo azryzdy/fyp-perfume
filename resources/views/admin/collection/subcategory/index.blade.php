@@ -90,7 +90,7 @@
                     <h6 class="mb-0">
                     Collection/Sub-Category
                     
-                    <a href="{{ url('') }}" class="btn bg-primary p-2 text-white float-right">Deleted Sub-Category</a>
+                    <a href="{{ url('') }}" class="btn bg-primary p-2 text-white float-right">Delet Sub-Category</a>
                     <a href="#" data-toggle="modal" data-target="#SubCategoryMODAL" class="btn bg-primary p-2 text-white float-right">ADD Sub-Category</a>
                     </h6>
                 <div class="card-body">
