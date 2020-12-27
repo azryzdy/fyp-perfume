@@ -119,4 +119,25 @@ class ProductController extends Controller
         $products->update();
         return redirect()->back()->with('status','Product Successfully Added.!');
     }
+    public function delete($id)
+    {
+        $products = Products::find($id);
+        $products->status = "3";
+        $products->update();
+        return redirect()->back()->with('status','Data deleted');
+    }
+    public function deletedrecords()
+    {
+        $products = Products::where('status', '3')->get();
+        return view('admin.collection.product.deleted')
+            ->with('products', $products)
+        ;
+    }
+    public function deletedrestore($id)
+    {
+        $products = Products::find($id);
+        $products->status = "0"; //0->show 1->hide, 2->delete
+        $products->update();
+        return redirect('products')->with('status', 'Data Restored');
+    }
 }

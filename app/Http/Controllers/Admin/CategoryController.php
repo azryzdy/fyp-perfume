@@ -109,4 +109,18 @@ class CategoryController extends Controller
         return redirect()->back()->with('status','Category Deleted Successfully');
 
     }
+    public function deletedrecords()
+    {
+        $category = category::where('status', '3')->get();
+        return view('admin.collection.category.deleted')
+            ->with('category', $category)
+        ;
+    }
+    public function deletedrestore($id)
+    {
+        $category = category::find($id);
+        $category->status = "0"; //0->show 1->hide, 2->delete
+        $category->update();
+        return redirect('category')->with('status', 'Data Restored');
+    }
 }

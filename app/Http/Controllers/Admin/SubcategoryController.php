@@ -86,4 +86,18 @@ class SubcategoryController extends Controller
 
         return redirect()->back()->with('status', 'Sub-Category Deleted Successfully');
     }
+    public function deletedrecords()
+    {
+        $subcategory = Subcategory::where('status', '3')->get();
+        return view('admin.collection.subcategory.deleted')
+            ->with('subcategory', $subcategory)
+        ;
+    }
+    public function deletedrestore($id)
+    {
+        $subcategory = Subcategory::find($id);
+        $subcategory->status = "0"; //0->show 1->hide, 2->delete
+        $subcategory->update();
+        return redirect('sub-category')->with('status', 'Data Restored');
+    }
 }

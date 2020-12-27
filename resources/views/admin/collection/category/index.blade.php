@@ -11,14 +11,11 @@
 <div class="container fluid-mt-5">
     <div class="row">
         <div class="col-md-12">
-            @if(session('status'))
-                <h6> {{ session('status') }}</h6>
-            @endif
             <div class="card">
                     <h6 class="mb-0">
                     Collection/Category
                     
-                    <a href="{{ url('category-delete') }}" class="btn bg-primary p-2 text-white float-right">Deleted Category</a>
+                    <a href="{{ url('category-delete-records') }}" class="btn bg-primary p-2 text-white float-right">Deleted Category</a>
                     <a href="{{ url('category-add') }}" class="btn bg-primary p-2 text-white float-right">ADD Category</a>
                     </h6>
                 <div class="card-body">

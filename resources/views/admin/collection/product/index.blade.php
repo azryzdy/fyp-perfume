@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Category - List | Perfume
+    Sub-Category - List | Perfume
 @endsection
 
 
@@ -18,7 +18,7 @@
                     <h6 class="mb-0">
                     Collection/Products
                     
-                    <a href="{{ url('') }}" class="btn bg-primary p-2 text-white float-right">Deleted Records</a>
+                    <a href="{{ url('products-delete-records') }}" class="btn bg-primary p-2 text-white float-right">Deleted Records</a>
                     <a href="{{ url('add-products') }}" class="btn bg-primary p-2 text-white float-right">ADD Product</a>
                     </h6>
                 <div class="card-body">
@@ -43,7 +43,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ url('edit-products/'.$item->id) }}" class="badge btn-danger">Edit</a>
-                                    <a href=" " class="badge btn-danger">Delete</a>
+                                    <a href="{{ url('delete-products/'.$item->id) }}" class="badge btn-danger">Delete</a>
                                 </td>
                             </tr>
                              @endforeach

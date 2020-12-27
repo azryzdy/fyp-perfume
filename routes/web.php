@@ -69,13 +69,19 @@ Route::group(['middleware' => ['auth', 'admin']], function()
     Route::get('/category-edit/{id}', 'App\Http\Controllers\Admin\CategoryController@edit');
     Route::put('/category-update/{id}', 'App\Http\Controllers\Admin\CategoryController@update');
     Route::get('/category-delete/{id}', 'App\Http\Controllers\Admin\CategoryController@delete');
+    Route::get('category-delete-records', 'App\Http\Controllers\Admin\CategoryController@deletedrecords');
+    Route::get('delete-category-store/{id}', 'App\Http\Controllers\Admin\CategoryController@deletedrestore');
 
+
+    
     //Sub Category
     Route::get('/sub-category', 'App\Http\Controllers\Admin\SubcategoryController@index');
     Route::post('/sub-category-store', 'App\Http\Controllers\Admin\SubcategoryController@store');
     Route::get('/subcategory-edit/{id}', 'App\Http\Controllers\Admin\SubcategoryController@edit');
     Route::put('sub-category-update/{id}', 'App\Http\Controllers\Admin\SubcategoryController@update');
     Route::get('subcategory-delete/{id}', 'App\Http\Controllers\Admin\SubcategoryController@delete');
+    Route::get('subcategory-delete-records', 'App\Http\Controllers\Admin\SubcategoryController@deletedrecords');
+    Route::get('delete-subcategory-store/{id}', 'App\Http\Controllers\Admin\SubcategoryController@deletedrestore');
 
     //Product
     Route::get('products', 'App\Http\Controllers\Admin\ProductController@index');
@@ -83,7 +89,9 @@ Route::group(['middleware' => ['auth', 'admin']], function()
     Route::post('store-products','App\Http\Controllers\Admin\ProductController@store');
     Route::get('/edit-products/{id}', 'App\Http\Controllers\Admin\ProductController@edit');
     Route::put('/update-product/{id}', 'App\Http\Controllers\Admin\ProductController@update');
-
+    Route::get('delete-products/{id}', 'App\Http\Controllers\Admin\ProductController@delete');
+    Route::get('products-delete-records', 'App\Http\Controllers\Admin\ProductController@deletedrecords');
+    Route::get('delete-products-store/{id}', 'App\Http\Controllers\Admin\ProductController@deletedrestore');
     
 
     
