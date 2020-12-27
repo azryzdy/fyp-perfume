@@ -36,6 +36,10 @@
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="{{ asset('assets.css/dataTables.min.css') }}" /> 
+
+  <!-- SUMMER NOTE ---> 
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
 </head>
 
 <body class="">
@@ -44,28 +48,26 @@
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
+     
       <div class="logo">
+      <!--
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
           CT
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        -->
+        <a href="" class="simple-text logo-normal" style="text-align: center;">
+          Admin Dashboard
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li class="{{ 'dashboard' == request()->path() ? 'active' : '' }}">
             <a href="/dashboard">
-              <i class="now-ui-icons design_app"></i>
+              <i class="now-ui-icons business_money-coins"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
-            <a href="./icons.html">
-              <i class="now-ui-icons education_atom"></i>
-              <p>Icons</p>
-            </a>
-          </li>
+          <!--
           <li lass="{{ 'service-list' == request()->path() ? 'active' : '' }}">
             <a href="{{ url('service-list') }}">
               <i class="now-ui-icons ui-1_bell-53"></i>
@@ -78,6 +80,7 @@
               <p>Category</p>
             </a>
           </li>
+          -->
           <li class="{{ 'abouts' == request()->path() ? 'active' : '' }}">
             <a href="/abouts">
               <i class="now-ui-icons ui-1_bell-53"></i>
@@ -90,24 +93,38 @@
               <p>User Profile</p>
             </a>
           </li>
-          <li >
-            <a href="./tables.html">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>Table List</p>
+          <li href="{{ 'group' == request()->path() ? 'active' : '' }}">
+            <a href="group">
+              <i class="now-ui-icons files_box"></i>
+              <p>Group</p>
             </a>
           </li>
-          <li>
-            <a href="./typography.html">
-              <i class="now-ui-icons text_caps-small"></i>
-              <p>Typography</p>
+          <li href="{{ 'category' == request()->path() ? 'active' : '' }}">
+            <a href="category">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Category</p>
             </a>
           </li>
+          <li href="{{ 'sub-category' == request()->path() ? 'active' : '' }}">
+            <a href="sub-category">
+              <i class="now-ui-icons files_single-copy-04"></i>
+              <p>Sub-Category</p>
+            </a>
+          </li>
+          <li href="{{ 'products' == request()->path() ? 'active' : '' }}">
+            <a href="products">
+              <i class="now-ui-icons shopping_basket"></i>
+              <p>Product</p>
+            </a>
+          </li>
+          <!--
           <li class="active-pro">
             <a href="./upgrade.html">
               <i class="now-ui-icons arrows-1_cloud-download-93"></i>
               <p>Upgrade to PRO</p>
             </a>
           </li>
+          -->
         </ul>
       </div>
     </div>
@@ -201,7 +218,7 @@
       @yield('content')
      
       </div>
-
+      <!--
       <footer class="footer">
         <div class=" container-fluid ">
           <nav>
@@ -230,6 +247,7 @@
           </div>
         </div>
       </footer>
+      -->
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -260,6 +278,8 @@
   
   </script>
 
+  <!-- SUMMERNOTE JS-->
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
   @yield('scripts')
 </body>
 

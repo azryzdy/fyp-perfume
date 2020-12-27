@@ -17,7 +17,7 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                <form action="{{ url('category-store') }}" method="POST">
+                <form action="{{ url('category-store1') }}" method="POST">
                     {{ csrf_field() }}
 
                     <div class="col-md-6">
