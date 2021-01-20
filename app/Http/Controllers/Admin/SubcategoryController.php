@@ -41,7 +41,7 @@ class SubcategoryController extends Controller
 
         return redirect()->back()->with('status', 'Subcategory Saved Successfully');
     }
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $category = Category::where('status', '!='. '3')->get();
         $subcategory = Subcategory::find($id);

@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Edit Registered | Battle of Munda
+    Edit Registered | Perfume Shop
 @endsection
 
 

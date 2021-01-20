@@ -140,4 +140,5 @@ class ProductController extends Controller
         $products->update();
         return redirect('products')->with('status', 'Data Restored');
     }
+    
 }

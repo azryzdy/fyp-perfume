@@ -86,7 +86,7 @@
                                     <div class="col-md-9">
                                         <div class="form-group">
                                             <label for="">Product Image</label>
-                                            <input type="file" name="prod_image" placeholder="Product Image" class="form-control">
+                                            <input type="file" name="prod_image" placeholder="Product Image" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">

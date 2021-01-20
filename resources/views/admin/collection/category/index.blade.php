@@ -19,7 +19,7 @@
                     <a href="{{ url('category-add') }}" class="btn bg-primary p-2 text-white float-right">ADD Category</a>
                     </h6>
                 <div class="card-body">
-                    <table class="table table-striped table-bordered">
+                    <table id="datatable" class="table table-striped table-bordered">
                         <thead>
                             <th>ID</th>
                             <th>Name</th>
@@ -41,7 +41,7 @@
                                     <img src="{{ asset('uploads/categoryimage/'.$item->image) }}" width="100px" />
                                 </td>
                                 <td>
-                                    <img src="{{ asset('uploads/categoryicon/'.$item->icon) }}" width="100px" />
+                                    <img src="{{ asset('uploads/categoryicon/'.$item->icon) }}" width="100px" height="140px"/>
                                 </td>
                                 <td>
                                     <input type="checkbox" {{ $item->status == '1' ? 'checked' : '' }}>
@@ -60,4 +60,13 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section('scripts')
+    <script>
+        $(document).ready( function () {
+            $('#datatable').DataTable();
+        } );
+    </script>
 @endsection

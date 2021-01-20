@@ -87,7 +87,7 @@
                                         <div class="form-group">
                                             <label for="">Product Image</label>
                                             <input type="file" name="prod_image" placeholder="Product Image" class="form-control">
-                                            <img src="{{ asset('uploads/products/'.$products->image) }}" alt="">
+                                            <img src="{{ asset('uploads/products/'.$products->image) }}" alt="" width="250px" height="200px">
                                         </div>
                                     </div>
                                     <div class="col-md-3">

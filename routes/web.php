@@ -93,7 +93,9 @@ Route::group(['middleware' => ['auth', 'admin']], function()
     Route::get('products-delete-records', 'App\Http\Controllers\Admin\ProductController@deletedrecords');
     Route::get('delete-products-store/{id}', 'App\Http\Controllers\Admin\ProductController@deletedrestore');
     
+    //Sales
+    Route::get('sales', 'App\Http\Controllers\Admin\SalesController@index');
+    Route::get('salesreport', 'App\Http\Controllers\Admin\SalesController@report');
 
-    
     Route::post('/dashboard','App\Http\Controllers\EmployeeController@store')->name('addimage');
 });

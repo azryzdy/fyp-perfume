@@ -19,7 +19,7 @@
     <div class="card">
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-striped-table-bordered">
+                <table id="datatable" class="table table-striped-table-bordered">
                     <thead>
                         <th>ID</th>
                         <th>Name</th>
@@ -49,4 +49,13 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section('scripts')
+    <script>
+        $(document).ready( function () {
+            $('#datatable').DataTable();
+        } );
+    </script>
 @endsection

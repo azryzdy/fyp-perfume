@@ -38,4 +38,5 @@ class DashboardController extends Controller
         Session::flash('statuscode', 'error');
         return redirect('/role-register')->with('status','Your data is deleted');
     }
+    
 }

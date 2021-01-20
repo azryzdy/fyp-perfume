@@ -64,7 +64,14 @@
           <li class="{{ 'dashboard' == request()->path() ? 'active' : '' }}">
             <a href="/dashboard">
               <i class="now-ui-icons business_money-coins"></i>
-              <p>Dashboard</p>
+              <p>About Us</p>
+            </a>
+          </li>
+          <ul class="nav">
+          <li class="{{ 'sales' == request()->path() ? 'active' : '' }}">
+            <a href="/sales">
+              <i class="now-ui-icons business_money-coins"></i>
+              <p>Sales</p>
             </a>
           </li>
           <!--
@@ -81,37 +88,39 @@
             </a>
           </li>
           -->
+          <!--
           <li class="{{ 'abouts' == request()->path() ? 'active' : '' }}">
             <a href="/abouts">
               <i class="now-ui-icons ui-1_bell-53"></i>
               <p>About Us</p>
             </a>
           </li>
+          -->
           <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
             <a href="role-register">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li href="{{ 'group' == request()->path() ? 'active' : '' }}">
+          <li class="{{ 'group' == request()->path() ? 'active' : '' }}">
             <a href="group">
               <i class="now-ui-icons files_box"></i>
               <p>Group</p>
             </a>
           </li>
-          <li href="{{ 'category' == request()->path() ? 'active' : '' }}">
+          <li class="{{ 'category'  == request()->path() ? 'active' : '' }}">
             <a href="category">
               <i class="now-ui-icons files_paper"></i>
               <p>Category</p>
             </a>
           </li>
-          <li href="{{ 'sub-category' == request()->path() ? 'active' : '' }}">
+          <li class="{{ 'sub-category'  == request()->path() ? 'active' : '' }}">
             <a href="sub-category">
               <i class="now-ui-icons files_single-copy-04"></i>
               <p>Sub-Category</p>
             </a>
           </li>
-          <li href="{{ 'products' == request()->path() ? 'active' : '' }}">
+          <li class="{{ 'products' == request()->path() ? 'active' : '' }}">
             <a href="products">
               <i class="now-ui-icons shopping_basket"></i>
               <p>Product</p>
@@ -148,6 +157,7 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <!--
             <form>
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
@@ -158,7 +168,9 @@
                 </div>
               </div>
             </form>
+            -->
             <ul class="navbar-nav">
+            <!--
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons media-2_sound-wave"></i>
@@ -167,6 +179,7 @@
                   </p>
                 </a>
               </li>
+              -->
               <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -197,6 +210,7 @@
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li> -->
+              <!--
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons users_single-02"></i>
@@ -205,6 +219,7 @@
                   </p>
                 </a>
               </li>
+              -->
             </ul>
           </div>
         </div>
