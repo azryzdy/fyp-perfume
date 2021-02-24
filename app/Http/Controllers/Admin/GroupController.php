@@ -36,23 +36,24 @@ class GroupController extends Controller
     
         return redirect()->back()->with('status','Group Data Added Succesfully');
     }
-    public function edit()
+    public function edit($id)
     {
-        $group = Group::find($id);
+        $group = Groups::find($id);
         return view('admin.collection.group.edit')
             ->with('group', $group)
         ;
-            
     }
+    
     public function update(Request $request, $id)
     {
-        $group = Group::find($id);
+        $group = Groups::find($id);
         $group->url = $request->url;
         $group->name1 = $request->name1;
         $group->descrip = $request->descrip;
         $group->status = $request->input('status') == true ? '1':'0';
         $group->update();
-        return redirect()->back()->with('status', 'Group Data Updated Successfully');
+
+        return redirect('/group')->with('status', 'Group Data Updated Successfully');
     }
     public function delete($id)
     {

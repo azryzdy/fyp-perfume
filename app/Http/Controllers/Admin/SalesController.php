@@ -35,6 +35,11 @@ class SalesController extends Controller
                 $mainprice->original_price = $request->original_price;
                 $result->price = $mainqty+$mainprice;
             }
+        foreach ($products as $products) { 
+                $item2 = ($item->original_price * $item->quantity) + $item2;
+        }
+
+            
         //$mainprice = $products->original_price; 
     }
 }

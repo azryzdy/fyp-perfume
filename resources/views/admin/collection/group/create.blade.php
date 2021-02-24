@@ -13,6 +13,7 @@
         <div class="col-md-12">
             <div class="card">
                 <h6>Collection/Groups 
+                <a href="{{ url('group') }}"  class="btn bg-primary p-2 text-white float-right">BACK</a>
                 </h6>
             </div>
         </div>

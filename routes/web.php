@@ -58,7 +58,7 @@ Route::group(['middleware' => ['auth', 'admin']], function()
     Route::get('group-add','App\Http\Controllers\Admin\GroupController@viewpage');
     Route::post('group-store','App\Http\Controllers\Admin\GroupController@store');
     Route::get('group-edit/{id}','App\Http\Controllers\Admin\GroupController@edit');
-    Route::put('group-update/{id}', 'App\Http\Controllers\Admin\GroupController@gupdate');
+    Route::put('group-update/{id}', 'App\Http\Controllers\Admin\GroupController@update');
     Route::get('group-delete/{id}', 'App\Http\Controllers\Admin\GroupController@delete');
     Route::get('group-delete-records', 'App\Http\Controllers\Admin\GroupController@deletedrecords');
     Route::get('group-re-store/{id}', 'App\Http\Controllers\Admin\GroupController@deletedrestore');

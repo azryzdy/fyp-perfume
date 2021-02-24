@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Sub-Category - List | Perfume
+    Products - List | Perfume
 @endsection
 
 
@@ -26,9 +26,9 @@
                         <thead>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Sub Category Name</th>
+                            <th>Original Price</th>
                             <th>Image</th>
-                            <th>Show/Hide</th>
+                            <th>Small Description</th>
                             <th>Action</th>
                         </thead>
                         <tbody>
@@ -36,10 +36,10 @@
                              <tr>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->subcategory->name }}</td>
+                                <td>RM{{ $item->original_price }}</td>
                                 <td><img src="{{ asset('uploads/products/'.$item->image) }}" alt="Product Image" width="100px"></td>
                                 <td>
-                                    <input type="checkbox" {{ $item->status == '1' ? 'checked' : ''}} >
+                                   {{ $item->small_description}}
                                 </td>
                                 <td>
                                     <a href="{{ url('edit-products/'.$item->id) }}" class="badge btn-danger">Edit</a>
@@ -49,7 +49,6 @@
                              @endforeach
                         </tbody>
                     </table>
-                    
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Sub-Category - List | Perfume
+    Sales Report | Perfume
 @endsection
 
 
@@ -16,26 +16,29 @@
                 <h6> {{ session('status') }}</h6>
             @endif
                 <div class="card-body">
-                   <!-- <a href="{{ url('salesreport') }}" class="btn bg-primary p-2 text-white float-left">Sales Report</a> -->
-                   {{ $item1 = 0 }}
+                   <!-- <a href="{{ url('salesreport') }}" class="btn bg-primary p-2 text-white float-left">Sales Report</a> -->     
+                 <!--
+                        {{ $item1 = 0 }} 
                         @foreach($products as $item)
-                             <tr> 
-                                <td>{{  $item1 = ($item->original_price * $item->quantity) + $item1 }}</td>
-                            </tr>
+                            
+                                {{  $item1 = ($item->original_price * $item->quantity) + $item1 }}
+                           
                         @endforeach
+                -->
+                   
                 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
                 <main class="mdl-layout__content mdl-color--grey-100">
                     <div class="mdl-grid demo-content">
                     <div style="display: flex;">
                         <div style="width: 600px;">
-                            <h3 style="text-align: left;  text-transform: uppercase;  color: #1F3E63;">Profit could be made</h3>
+                            <h3 style="text-align: left;  text-transform: uppercase;  color:red;">Profit could be made</h3>
                             <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
                             <use xlink:href="#piechart" mask="url(#piemask)" />
                             <text x="0.5" y="0.5" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1" ><tspan dy="0.05" font-size="0.1">RM</tspan>{{ $item1 }} </text>
                             </svg>
                         </div>
                         <div style="flex-grow: 1;">
-                            <h3 style="text-align: left;  text-transform: uppercase;  color: #1F3E63;">Total Sales</h3>
+                            <h3 style="text-align: left;  text-transform: uppercase;  color:red;">Total Sales</h3>
                             <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
                             <use xlink:href="#piechart" mask="url(#piemask)" />
                             <text x="0.5" y="0.5" font-family="Roboto" font-size="0.2" fill="#888" text-anchor="middle" dy="0.1" ><tspan dy="0.05" font-size="0.1">RM</tspan>0</text>
@@ -59,28 +62,28 @@
                 </svg> 
                 </div>
                 <br>
-            <table class="table table-sm table-primary">
-            <thead>
-                <tr>
+
+                
+                <table class="table table-sm table-primary table-bordered" > 
+                <tr style=" text-align: center;">
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th>Total</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr> 
+                <tbody style="text-align: center; color:red; font-weight: bold;">
+                <tr > 
                 @foreach($products as $item)
-                <td>{{ $item->id }}</td>
+                    <td>{{ $item->id }}</td>
                     <td>{{ $item->name }}</td>
 				    <td>{{ $item->original_price }}</td>
                     <td>{{ $item->quantity }}</td>
                     <td>{{ $item->original_price * $item->quantity }}</td>      
                 </tr> 
                 @endforeach
-            </tbody>
-            </table>
+                </tbody> 
+                </table>
             </div>
         </div>
     </div>

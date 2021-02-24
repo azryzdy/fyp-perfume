@@ -4,6 +4,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\AuthProductController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,3 +25,5 @@ Route::middleware('auth:sanctum')->get('/testauth', function() {
   });
 Route::post("login",[AuthController::class,'getToken']);
 Route::post("register",[AuthController::class,'register']);
+Route::post("logout",[AuthController::class,'logout']);
+Route::get("list",[AuthProductController::class,'list']);

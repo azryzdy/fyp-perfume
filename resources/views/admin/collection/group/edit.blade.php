@@ -13,6 +13,7 @@
         <div class="col-md-12">
             <div class="card">
                 <h6>Collection/Groups 
+                <a href="{{ url('group') }}" class="badge bg-danger p-2 text-white float-right">BACK</a></h6>
                 </h6>
             </div>
         </div>
@@ -20,13 +21,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
                 <div class="card-body">
-                    <form action="{{ url('group-update') }}" method="POST">
+                <form action="{{ url('group-update/'.$group->id) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
                         <div class="row">
