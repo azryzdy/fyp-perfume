@@ -20,10 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 */
-Route::middleware('auth:sanctum')->get('/testauth', function() {
-    return auth()->user();
-  });
+Route::middleware(['auth:sanctum'])->group(function () {
+  Route::get('myinfo', function() { return auth()->user(); });
+
+  Route::post("logout",[AuthController::class,'logout']);
+});
+
+
 Route::post("login",[AuthController::class,'getToken']);
 Route::post("register",[AuthController::class,'register']);
-Route::post("logout",[AuthController::class,'logout']);
 Route::get("list",[AuthProductController::class,'list']);
