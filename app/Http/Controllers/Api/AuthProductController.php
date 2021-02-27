@@ -13,6 +13,6 @@ class AuthProductController extends Controller
     {
         $product = Products::where('status', '!=', '3')->get();
         return $product;
-        return response()->json(["token" => $product->createToken($request->device_name)->plainTextToken], 200);
+        
     }
 }

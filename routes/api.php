@@ -23,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware(['auth:sanctum'])->group(function () {
   Route::get('myinfo', function() { return auth()->user(); });
 
-  Route::post("logout",[AuthController::class,'logout']);
+  Route::get("logout",[AuthController::class,'logout']);
 });
 
 

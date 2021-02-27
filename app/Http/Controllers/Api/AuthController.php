@@ -29,7 +29,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
           ]);
           
-          return response()->json(["token" => $user->createToken($request->device_name)->plainTextToken], 200);//firstimer
+          return response()->json(["token" => $user->createToken($request->device_name)->plainTextToken, "user"=>$user], 200);//firstimer
     }
     public function getToken(Request $request)
     {
@@ -47,7 +47,7 @@ class AuthController extends Controller
             ]);
         }
     
-        return response()->json(["token" => $user->createToken($request->device_name)->plainTextToken], 200);//different token everytime login no need to save token
+        return response()->json(["token" => $user->createToken($request->device_name)->plainTextToken, "user"=>$user], 200);//different token everytime login no need to save token
     }
     public function logout(Request $request)
     {
