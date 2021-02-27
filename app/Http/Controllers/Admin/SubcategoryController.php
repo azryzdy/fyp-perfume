@@ -10,8 +10,8 @@ use File;
 class SubcategoryController extends Controller
 {
     public function index()
-    {
-        $category = Category::where('status', '!='. '3')->get();
+    {   //putting dot at '!='. '3') for some reason lol
+        $category = Category::where('status', '!=', '3')->get(); // $category = Category::where('status', '!='. '3')->get();
         $subcategory = Subcategory::where('status', '!=', '3')->get(); //3= deleted
         return view('admin.collection.subcategory.index')
             ->with('subcategory', $subcategory)
@@ -43,7 +43,7 @@ class SubcategoryController extends Controller
     }
     public function edit(Request $request, $id)
     {
-        $category = Category::where('status', '!='. '3')->get();
+        $category = Category::where('status', '!=', '3')->get();
         $subcategory = Subcategory::find($id);
         return view('admin.collection.subcategory.edit')
             ->with('subcategory', $subcategory)

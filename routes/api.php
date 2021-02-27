@@ -30,3 +30,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::post("login",[AuthController::class,'getToken']);
 Route::post("register",[AuthController::class,'register']);
 Route::get("list",[AuthProductController::class,'list']);
+Route::get('category','App\Http\Controllers\Api\AuthCategoryController@category');
+Route::get('subcategory','App\Http\Controllers\Api\AuthSubCategoryController@subcategory');
