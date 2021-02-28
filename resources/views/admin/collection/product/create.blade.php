@@ -116,7 +116,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Priority</label>
-                                            <input type="number" name="priority" placeholder="Priority" class="form-control" />
+                                            <input type="number" name="priority" placeholder="Priority" class="form-control" required/>
                                         </div>
                                     </div>
 

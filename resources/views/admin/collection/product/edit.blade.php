@@ -64,7 +64,6 @@
                                         <div class="form-group">
                                             <label for="">Select Sub-Category (Eg: Brands)</label>
                                             <select name="sub_category_id" class="form-control" required>
-                                                <option value="{{ $products->sub_category_id }}">{{ $products->subcategory->name }}</option>
                                                 @foreach ($subcategory as $subcateitem)
                                                 <option value="{{ $subcateitem->id }}">{{ $subcateitem->name }}</option>
                                                 @endforeach
