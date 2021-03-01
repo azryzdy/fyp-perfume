@@ -35,7 +35,12 @@ class Products extends Model
         'meta_keyword',       
     
     ];
+    protected $appends = array('link');
 
+    public function getLinkAttribute()
+    {
+        return "https://pstore.sytes.net/uploads/products/" . $this->image;
+    }
     public function subcategory()
     {
         return $this->belongsTo(Category::class, 'sub_category_id', 'id');
