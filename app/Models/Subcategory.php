@@ -14,4 +14,10 @@ class Subcategory extends Model
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
+    protected $appends = array('subcategory');
+
+    public function getLinkAttribute()
+    {
+        return "https://pstore.sytes.net/uploads/subcategory/" . $this->image;
+    }
 }
