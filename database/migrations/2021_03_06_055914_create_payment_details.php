@@ -15,6 +15,8 @@ class CreatePaymentDetails extends Migration
     {
         Schema::create('payment_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('payment_id');
+            $table->unsignedBigInteger('product_id');
             $table->foreign('payment_id')->references('id')->on('payments');
             $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
