@@ -20,7 +20,7 @@ class PaymentController extends Controller
         $amount = $request->query('amount');
         $payment = Payment::create([
             'user_id' => $id,
-            'payment' => $amount,
+            'amount' => $amount,
         ]);
        return $payment;
     }
