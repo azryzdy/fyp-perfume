@@ -5,9 +5,10 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\AuthSubCategoryController;
+use App\Http\Controllers\Api\PaymentController;
 
 use App\Http\Controllers\Api\AuthProductController;
+use App\Http\Controllers\Api\AuthSubCategoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,3 +36,6 @@ Route::post("register",[AuthController::class,'register']);
 Route::get("list",[AuthProductController::class,'list']); 
 Route::get("subcategory",[AuthSubCategoryController::class,'subcategory']); 
 Route::get('category','App\Http\Controllers\Api\AuthCategoryController@category');
+Route::get('payment',[PaymentController::class,'getpayment']);
+Route::post('payment',[PaymentController::class,'createpayment']);
+Route::delete('payment',[PaymentController::class,'cancelpayment']);
