@@ -39,3 +39,4 @@ Route::get('category','App\Http\Controllers\Api\AuthCategoryController@category'
 Route::get('payment',[PaymentController::class,'getpayment']);
 Route::post('payment',[PaymentController::class,'createpayment']);
 Route::delete('payment',[PaymentController::class,'cancelpayment']);
+Route::get('paymentdetails',[PaymentController::class,'getpaymentdetails']);

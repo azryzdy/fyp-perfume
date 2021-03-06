@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Payments;
+use App\Models\Products;
 use Illuminate\Http\Request;
 use App\Models\PaymentDetails;
 use App\Http\Controllers\Controller;
@@ -38,6 +39,29 @@ class PaymentController extends Controller
         $payment->delete();
 
         return $payment;
+    }
+    function getpaymentdetails(Request $request)
+    {
+        $id = $request->query('payment_id');
+        $details = PaymentDetails::where('payment_id', $id)->get();
+       
+        $array = $details->map(function($item) {
+            return $item->product_id;
+            
+           });
+   
+        $products = Products::whereIn('id', $array)->get();
+        
+        foreach($details as $detail){
+            foreach($products as $product){
+                 if ($product->id == $detail->product_id){
+                       $product->quantity = $detail->quantity;
+                     
+        }
+        
+            }
+        }
+        return $products;
     }
 
 }
