@@ -17,6 +17,7 @@ class CreatePaymentDetails extends Migration
             $table->id();
             $table->unsignedBigInteger('payment_id');
             $table->unsignedBigInteger('product_id');
+            $table->integer('quantity');
             $table->foreign('payment_id')->references('id')->on('payments');
             $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
